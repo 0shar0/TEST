@@ -1,0 +1,126 @@
+:root {
+    --main-text-color: #0DE2FF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 120px;
+    width: 100vw;
+    min-height: 1272px;
+    background: linear-gradient(to bottom, #1d0d41, #2a024e, #16002D);
+}
+
+.main-header {
+    color: var(--main-text-color);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 59px;
+}
+
+.items-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.image-container{
+    position: relative;
+}
+
+.item:nth-child(even) .image{
+    right: 0;
+    left: auto;
+}
+
+.image{
+    position: absolute;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+.item {
+    width: 50%;
+    align-self: end;
+    padding: 0 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.item-header {
+    color: var(--main-text-color);
+    max-width: 360px;
+    margin-bottom: 17px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.item-header:before {
+    content: '';
+    width: 17px;
+    height: 17px;
+    border: solid var(--main-text-color) 5px;
+    display: block;
+    border-radius: 13.5px;
+    position: absolute;
+    left: calc(50% - 13.5px);
+    background-color: #270051;
+    z-index: 2;
+}
+
+.item-content {
+    color: #FFFFFF;
+    max-width: 264px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.item:nth-child(odd) {
+    align-self: start;
+    text-align: right;
+}
+
+.item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.line {
+    position: absolute;
+    width: 3px;
+    height: 885px;
+    background: var(--main-text-color);
+    top: 206px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.line:after,
+.line:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: var(--main-text-color);
+    position: absolute;
+    display: block;
+    right: -6px;
+}
+
+.line:after {
+    bottom: 0;
+}
